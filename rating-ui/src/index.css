@@ -1,0 +1,58 @@
+/* FIXME: this sucks */
+:root {
+  --bg-start: #f4efe6;
+  --bg-end: #e7f2ef;
+  --card-bg: #ffffff;
+  --card-shadow: 0 18px 40px rgba(20, 30, 45, 0.12);
+  --text-main: #1d2733;
+  --star: #ffb11a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+}
+
+#root {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.rating-container {
+  width: min(90vw, 420px);
+  padding: 32px 28px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+
+.rating-container h2 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.rating-container h2::after {
+  content: "\2605 \2605 \2605 \2605 \2605";
+  display: block;
+  margin-top: 18px;
+  color: var(--star);
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 2.4rem);
+  letter-spacing: 6px;
+  line-height: 1;
+}
